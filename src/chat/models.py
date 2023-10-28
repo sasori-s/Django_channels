@@ -9,8 +9,10 @@ class Message(models.Model):
     content = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
 
+    print(author, content, timestamp)
     def __str__(self):
         return self.author.username
 
+    @staticmethod
     def last_10_messages():
         return Message.objects.order_by('-timestamp').all()[:10]
