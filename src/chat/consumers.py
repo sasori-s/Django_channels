@@ -10,7 +10,7 @@ class ChatConsumer(WebsocketConsumer):
 
     def fetch_messages(self, data):
         messages = Message.last_10_messages()
-        # print(messages)
+        print(messages)
         print(data)
         content = {
             'command': 'messages',
