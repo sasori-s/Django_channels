@@ -28863,7 +28863,7 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"src/container/chat.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"src/container/Sidepanel/Sidepanel.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28871,6 +28871,109 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var SidePanel = function SidePanel(pros) {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    id: "sidepanel"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    id: "profile"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "wrap"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    id: "profile-img",
+    src: "http://emilcarlsson.se/assets/mikeross.png",
+    className: "online",
+    alt: ""
+  }), /*#__PURE__*/_react.default.createElement("p", null, "Mike Ross"), /*#__PURE__*/_react.default.createElement("i", {
+    className: "fa fa-chevron-down expand-button",
+    "aria-hidden": "true"
+  }), /*#__PURE__*/_react.default.createElement("div", {
+    id: "status-options"
+  }, /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement("li", {
+    id: "status-online",
+    className: "active"
+  }, /*#__PURE__*/_react.default.createElement("span", {
+    className: "status-circle"
+  }), " ", /*#__PURE__*/_react.default.createElement("p", null, "Online")), /*#__PURE__*/_react.default.createElement("li", {
+    id: "status-away"
+  }, /*#__PURE__*/_react.default.createElement("span", {
+    className: "status-circle"
+  }), " ", /*#__PURE__*/_react.default.createElement("p", null, "Away")), /*#__PURE__*/_react.default.createElement("li", {
+    id: "status-busy"
+  }, /*#__PURE__*/_react.default.createElement("span", {
+    className: "status-circle"
+  }), " ", /*#__PURE__*/_react.default.createElement("p", null, "Busy")), /*#__PURE__*/_react.default.createElement("li", {
+    id: "status-offline"
+  }, /*#__PURE__*/_react.default.createElement("span", {
+    className: "status-circle"
+  }), " ", /*#__PURE__*/_react.default.createElement("p", null, "Offline")))), /*#__PURE__*/_react.default.createElement("div", {
+    id: "expanded"
+  }))), /*#__PURE__*/_react.default.createElement("div", {
+    id: "search"
+  }, /*#__PURE__*/_react.default.createElement("label", {
+    htmlFor: ""
+  }, /*#__PURE__*/_react.default.createElement("i", {
+    className: "fa fa-search",
+    "aria-hidden": "true"
+  })), /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    placeholder: "Search contacts..."
+  })), /*#__PURE__*/_react.default.createElement("div", {
+    id: "contacts"
+  }, /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement("li", {
+    className: "contact"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "wrap"
+  }, /*#__PURE__*/_react.default.createElement("span", {
+    className: "contact-status online"
+  }), /*#__PURE__*/_react.default.createElement("img", {
+    src: "http://emilcarlsson.se/assets/louislitt.png",
+    alt: ""
+  }), /*#__PURE__*/_react.default.createElement("div", {
+    className: "meta"
+  }, /*#__PURE__*/_react.default.createElement("p", {
+    className: "name"
+  }, "Louis Litt"), /*#__PURE__*/_react.default.createElement("p", {
+    className: "preview"
+  }, "You just got LITT up, Mike.")))), /*#__PURE__*/_react.default.createElement("li", {
+    className: "contact active"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "wrap"
+  }, /*#__PURE__*/_react.default.createElement("span", {
+    className: "contact-status busy"
+  }), /*#__PURE__*/_react.default.createElement("img", {
+    src: "http://emilcarlsson.se/assets/harveyspecter.png",
+    alt: ""
+  }), /*#__PURE__*/_react.default.createElement("div", {
+    className: "meta"
+  }, /*#__PURE__*/_react.default.createElement("p", {
+    className: "name"
+  }, "Harvey Specter"), /*#__PURE__*/_react.default.createElement("p", {
+    className: "preview"
+  }, "Wrong. You take the gun, or you pull out a bigger one. Or, you call their bluff. Or, you do any one of a hundred and htmlForty six other things.")))))), /*#__PURE__*/_react.default.createElement("div", {
+    id: "bottom-bar"
+  }, /*#__PURE__*/_react.default.createElement("button", {
+    id: "addcontact"
+  }, /*#__PURE__*/_react.default.createElement("i", {
+    className: "fa fa-user-plus fa-fw",
+    "aria-hidden": "true"
+  }), " ", /*#__PURE__*/_react.default.createElement("span", null, "Add contact")), /*#__PURE__*/_react.default.createElement("button", {
+    id: "settings"
+  }, /*#__PURE__*/_react.default.createElement("i", {
+    className: "fa fa-cog fa-fw",
+    "aria-hidden": "true"
+  }), " ", /*#__PURE__*/_react.default.createElement("span", null, "Settings"))));
+};
+var _default = exports.default = SidePanel;
+},{"react":"node_modules/react/index.js"}],"src/container/chat.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _react = _interopRequireDefault(require("react"));
+var _Sidepanel = _interopRequireDefault(require("./Sidepanel/Sidepanel"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -28897,123 +29000,7 @@ var Chat = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       return /*#__PURE__*/_react.default.createElement("div", {
         id: "frame"
-      }, /*#__PURE__*/_react.default.createElement("div", {
-        id: "sidepanel"
-      }, /*#__PURE__*/_react.default.createElement("div", {
-        id: "profile"
-      }, /*#__PURE__*/_react.default.createElement("div", {
-        className: "wrap"
-      }, /*#__PURE__*/_react.default.createElement("img", {
-        id: "profile-img",
-        src: "http://emilcarlsson.se/assets/mikeross.png",
-        className: "online",
-        alt: ""
-      }), /*#__PURE__*/_react.default.createElement("p", null, "Mike Ross"), /*#__PURE__*/_react.default.createElement("i", {
-        className: "fa fa-chevron-down expand-button",
-        "aria-hidden": "true"
-      }), /*#__PURE__*/_react.default.createElement("div", {
-        id: "status-options"
-      }, /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement("li", {
-        id: "status-online",
-        className: "active"
-      }, /*#__PURE__*/_react.default.createElement("span", {
-        className: "status-circle"
-      }), " ", /*#__PURE__*/_react.default.createElement("p", null, "Online")), /*#__PURE__*/_react.default.createElement("li", {
-        id: "status-away"
-      }, /*#__PURE__*/_react.default.createElement("span", {
-        className: "status-circle"
-      }), " ", /*#__PURE__*/_react.default.createElement("p", null, "Away")), /*#__PURE__*/_react.default.createElement("li", {
-        id: "status-busy"
-      }, /*#__PURE__*/_react.default.createElement("span", {
-        className: "status-circle"
-      }), " ", /*#__PURE__*/_react.default.createElement("p", null, "Busy")), /*#__PURE__*/_react.default.createElement("li", {
-        id: "status-offline"
-      }, /*#__PURE__*/_react.default.createElement("span", {
-        className: "status-circle"
-      }), " ", /*#__PURE__*/_react.default.createElement("p", null, "Offline")))), /*#__PURE__*/_react.default.createElement("div", {
-        id: "expanded"
-      }, /*#__PURE__*/_react.default.createElement("label", {
-        htmlFor: "twitter"
-      }, /*#__PURE__*/_react.default.createElement("i", {
-        className: "fa fa-facebook fa-fw",
-        "aria-hidden": "true"
-      })), /*#__PURE__*/_react.default.createElement("input", {
-        name: "twitter",
-        type: "text",
-        value: "mikeross"
-      }), /*#__PURE__*/_react.default.createElement("label", {
-        htmlFor: "twitter"
-      }, /*#__PURE__*/_react.default.createElement("i", {
-        className: "fa fa-twitter fa-fw",
-        "aria-hidden": "true"
-      })), /*#__PURE__*/_react.default.createElement("input", {
-        name: "twitter",
-        type: "text",
-        value: "ross81"
-      }), /*#__PURE__*/_react.default.createElement("label", {
-        htmlFor: "twitter"
-      }, /*#__PURE__*/_react.default.createElement("i", {
-        className: "fa fa-instagram fa-fw",
-        "aria-hidden": "true"
-      })), /*#__PURE__*/_react.default.createElement("input", {
-        name: "twitter",
-        type: "text",
-        value: "mike.ross"
-      })))), /*#__PURE__*/_react.default.createElement("div", {
-        id: "search"
-      }, /*#__PURE__*/_react.default.createElement("label", {
-        htmlFor: ""
-      }, /*#__PURE__*/_react.default.createElement("i", {
-        className: "fa fa-search",
-        "aria-hidden": "true"
-      })), /*#__PURE__*/_react.default.createElement("input", {
-        type: "text",
-        placeholder: "Search contacts..."
-      })), /*#__PURE__*/_react.default.createElement("div", {
-        id: "contacts"
-      }, /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement("li", {
-        className: "contact"
-      }, /*#__PURE__*/_react.default.createElement("div", {
-        className: "wrap"
-      }, /*#__PURE__*/_react.default.createElement("span", {
-        className: "contact-status online"
-      }), /*#__PURE__*/_react.default.createElement("img", {
-        src: "http://emilcarlsson.se/assets/louislitt.png",
-        alt: ""
-      }), /*#__PURE__*/_react.default.createElement("div", {
-        className: "meta"
-      }, /*#__PURE__*/_react.default.createElement("p", {
-        className: "name"
-      }, "Louis Litt"), /*#__PURE__*/_react.default.createElement("p", {
-        className: "preview"
-      }, "You just got LITT up, Mike.")))), /*#__PURE__*/_react.default.createElement("li", {
-        className: "contact active"
-      }, /*#__PURE__*/_react.default.createElement("div", {
-        className: "wrap"
-      }, /*#__PURE__*/_react.default.createElement("span", {
-        className: "contact-status busy"
-      }), /*#__PURE__*/_react.default.createElement("img", {
-        src: "http://emilcarlsson.se/assets/harveyspecter.png",
-        alt: ""
-      }), /*#__PURE__*/_react.default.createElement("div", {
-        className: "meta"
-      }, /*#__PURE__*/_react.default.createElement("p", {
-        className: "name"
-      }, "Harvey Specter"), /*#__PURE__*/_react.default.createElement("p", {
-        className: "preview"
-      }, "Wrong. You take the gun, or you pull out a bigger one. Or, you call their bluff. Or, you do any one of a hundred and htmlForty six other things.")))))), /*#__PURE__*/_react.default.createElement("div", {
-        id: "bottom-bar"
-      }, /*#__PURE__*/_react.default.createElement("button", {
-        id: "addcontact"
-      }, /*#__PURE__*/_react.default.createElement("i", {
-        className: "fa fa-user-plus fa-fw",
-        "aria-hidden": "true"
-      }), " ", /*#__PURE__*/_react.default.createElement("span", null, "Add contact")), /*#__PURE__*/_react.default.createElement("button", {
-        id: "settings"
-      }, /*#__PURE__*/_react.default.createElement("i", {
-        className: "fa fa-cog fa-fw",
-        "aria-hidden": "true"
-      }), " ", /*#__PURE__*/_react.default.createElement("span", null, "Settings")))), /*#__PURE__*/_react.default.createElement("div", {
+      }, /*#__PURE__*/_react.default.createElement(_Sidepanel.default, null), /*#__PURE__*/_react.default.createElement("div", {
         className: "content"
       }, /*#__PURE__*/_react.default.createElement("div", {
         className: "contact-profile"
@@ -29058,7 +29045,7 @@ var Chat = /*#__PURE__*/function (_React$Component) {
   return Chat;
 }(_react.default.Component);
 var _default = exports.default = Chat;
-},{"react":"node_modules/react/index.js"}],"src/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./Sidepanel/Sidepanel":"src/container/Sidepanel/Sidepanel.js"}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -29119,7 +29106,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58221" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59774" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
