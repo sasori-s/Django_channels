@@ -1,10 +1,11 @@
 import React from 'react'
 import  ReactDOM   from 'react-dom'
+import Chat from './container/chat'
 
 class App extends React.Component {
     render() {
         return (
-            <div>Hello</div>
+            <Chat />
         )
     }
 }
