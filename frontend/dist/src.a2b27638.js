@@ -28902,58 +28902,58 @@ var Chat = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/_react.default.createElement("div", {
         id: "profile"
       }, /*#__PURE__*/_react.default.createElement("div", {
-        class: "wrap"
+        className: "wrap"
       }, /*#__PURE__*/_react.default.createElement("img", {
         id: "profile-img",
         src: "http://emilcarlsson.se/assets/mikeross.png",
-        class: "online",
+        className: "online",
         alt: ""
       }), /*#__PURE__*/_react.default.createElement("p", null, "Mike Ross"), /*#__PURE__*/_react.default.createElement("i", {
-        class: "fa fa-chevron-down expand-button",
+        className: "fa fa-chevron-down expand-button",
         "aria-hidden": "true"
       }), /*#__PURE__*/_react.default.createElement("div", {
         id: "status-options"
       }, /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement("li", {
         id: "status-online",
-        class: "active"
+        className: "active"
       }, /*#__PURE__*/_react.default.createElement("span", {
-        class: "status-circle"
+        className: "status-circle"
       }), " ", /*#__PURE__*/_react.default.createElement("p", null, "Online")), /*#__PURE__*/_react.default.createElement("li", {
         id: "status-away"
       }, /*#__PURE__*/_react.default.createElement("span", {
-        class: "status-circle"
+        className: "status-circle"
       }), " ", /*#__PURE__*/_react.default.createElement("p", null, "Away")), /*#__PURE__*/_react.default.createElement("li", {
         id: "status-busy"
       }, /*#__PURE__*/_react.default.createElement("span", {
-        class: "status-circle"
+        className: "status-circle"
       }), " ", /*#__PURE__*/_react.default.createElement("p", null, "Busy")), /*#__PURE__*/_react.default.createElement("li", {
         id: "status-offline"
       }, /*#__PURE__*/_react.default.createElement("span", {
-        class: "status-circle"
+        className: "status-circle"
       }), " ", /*#__PURE__*/_react.default.createElement("p", null, "Offline")))), /*#__PURE__*/_react.default.createElement("div", {
         id: "expanded"
       }, /*#__PURE__*/_react.default.createElement("label", {
-        for: "twitter"
+        htmlFor: "twitter"
       }, /*#__PURE__*/_react.default.createElement("i", {
-        class: "fa fa-facebook fa-fw",
+        className: "fa fa-facebook fa-fw",
         "aria-hidden": "true"
       })), /*#__PURE__*/_react.default.createElement("input", {
         name: "twitter",
         type: "text",
         value: "mikeross"
       }), /*#__PURE__*/_react.default.createElement("label", {
-        for: "twitter"
+        htmlFor: "twitter"
       }, /*#__PURE__*/_react.default.createElement("i", {
-        class: "fa fa-twitter fa-fw",
+        className: "fa fa-twitter fa-fw",
         "aria-hidden": "true"
       })), /*#__PURE__*/_react.default.createElement("input", {
         name: "twitter",
         type: "text",
         value: "ross81"
       }), /*#__PURE__*/_react.default.createElement("label", {
-        for: "twitter"
+        htmlFor: "twitter"
       }, /*#__PURE__*/_react.default.createElement("i", {
-        class: "fa fa-instagram fa-fw",
+        className: "fa fa-instagram fa-fw",
         "aria-hidden": "true"
       })), /*#__PURE__*/_react.default.createElement("input", {
         name: "twitter",
@@ -28962,9 +28962,9 @@ var Chat = /*#__PURE__*/function (_React$Component) {
       })))), /*#__PURE__*/_react.default.createElement("div", {
         id: "search"
       }, /*#__PURE__*/_react.default.createElement("label", {
-        for: ""
+        htmlFor: ""
       }, /*#__PURE__*/_react.default.createElement("i", {
-        class: "fa fa-search",
+        className: "fa fa-search",
         "aria-hidden": "true"
       })), /*#__PURE__*/_react.default.createElement("input", {
         type: "text",
@@ -28972,85 +28972,85 @@ var Chat = /*#__PURE__*/function (_React$Component) {
       })), /*#__PURE__*/_react.default.createElement("div", {
         id: "contacts"
       }, /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement("li", {
-        class: "contact"
+        className: "contact"
       }, /*#__PURE__*/_react.default.createElement("div", {
-        class: "wrap"
+        className: "wrap"
       }, /*#__PURE__*/_react.default.createElement("span", {
-        class: "contact-status online"
+        className: "contact-status online"
       }), /*#__PURE__*/_react.default.createElement("img", {
         src: "http://emilcarlsson.se/assets/louislitt.png",
         alt: ""
       }), /*#__PURE__*/_react.default.createElement("div", {
-        class: "meta"
+        className: "meta"
       }, /*#__PURE__*/_react.default.createElement("p", {
-        class: "name"
+        className: "name"
       }, "Louis Litt"), /*#__PURE__*/_react.default.createElement("p", {
-        class: "preview"
+        className: "preview"
       }, "You just got LITT up, Mike.")))), /*#__PURE__*/_react.default.createElement("li", {
-        class: "contact active"
+        className: "contact active"
       }, /*#__PURE__*/_react.default.createElement("div", {
-        class: "wrap"
+        className: "wrap"
       }, /*#__PURE__*/_react.default.createElement("span", {
-        class: "contact-status busy"
+        className: "contact-status busy"
       }), /*#__PURE__*/_react.default.createElement("img", {
         src: "http://emilcarlsson.se/assets/harveyspecter.png",
         alt: ""
       }), /*#__PURE__*/_react.default.createElement("div", {
-        class: "meta"
+        className: "meta"
       }, /*#__PURE__*/_react.default.createElement("p", {
-        class: "name"
+        className: "name"
       }, "Harvey Specter"), /*#__PURE__*/_react.default.createElement("p", {
-        class: "preview"
-      }, "Wrong. You take the gun, or you pull out a bigger one. Or, you call their bluff. Or, you do any one of a hundred and forty six other things.")))))), /*#__PURE__*/_react.default.createElement("div", {
+        className: "preview"
+      }, "Wrong. You take the gun, or you pull out a bigger one. Or, you call their bluff. Or, you do any one of a hundred and htmlForty six other things.")))))), /*#__PURE__*/_react.default.createElement("div", {
         id: "bottom-bar"
       }, /*#__PURE__*/_react.default.createElement("button", {
         id: "addcontact"
       }, /*#__PURE__*/_react.default.createElement("i", {
-        class: "fa fa-user-plus fa-fw",
+        className: "fa fa-user-plus fa-fw",
         "aria-hidden": "true"
       }), " ", /*#__PURE__*/_react.default.createElement("span", null, "Add contact")), /*#__PURE__*/_react.default.createElement("button", {
         id: "settings"
       }, /*#__PURE__*/_react.default.createElement("i", {
-        class: "fa fa-cog fa-fw",
+        className: "fa fa-cog fa-fw",
         "aria-hidden": "true"
       }), " ", /*#__PURE__*/_react.default.createElement("span", null, "Settings")))), /*#__PURE__*/_react.default.createElement("div", {
-        class: "content"
+        className: "content"
       }, /*#__PURE__*/_react.default.createElement("div", {
-        class: "contact-profile"
+        className: "contact-profile"
       }, /*#__PURE__*/_react.default.createElement("img", {
         src: "http://emilcarlsson.se/assets/harveyspecter.png",
         alt: ""
       }), /*#__PURE__*/_react.default.createElement("p", null, "username "), /*#__PURE__*/_react.default.createElement("div", {
-        class: "social-media"
+        className: "social-media"
       }, /*#__PURE__*/_react.default.createElement("i", {
-        class: "fa fa-facebook",
+        className: "fa fa-facebook",
         "aria-hidden": "true"
       }), /*#__PURE__*/_react.default.createElement("i", {
-        class: "fa fa-twitter",
+        className: "fa fa-twitter",
         "aria-hidden": "true"
       }), /*#__PURE__*/_react.default.createElement("i", {
-        class: "fa fa-instagram",
+        className: "fa fa-instagram",
         "aria-hidden": "true"
       }))), /*#__PURE__*/_react.default.createElement("div", {
-        class: "messages"
+        className: "messages"
       }, /*#__PURE__*/_react.default.createElement("ul", {
         id: "chat-log"
       })), /*#__PURE__*/_react.default.createElement("div", {
-        class: "message-input"
+        className: "message-input"
       }, /*#__PURE__*/_react.default.createElement("div", {
-        class: "wrap"
+        className: "wrap"
       }, /*#__PURE__*/_react.default.createElement("input", {
         id: "chat-message-input",
         type: "text",
         placeholder: "Write your message..."
       }), /*#__PURE__*/_react.default.createElement("i", {
-        class: "fa fa-paperclip attachment",
+        className: "fa fa-paperclip attachment",
         "aria-hidden": "true"
       }), /*#__PURE__*/_react.default.createElement("button", {
         id: "chat-message-submit",
-        class: "submit"
+        className: "submit"
       }, /*#__PURE__*/_react.default.createElement("i", {
-        class: "fa fa-paper-plane",
+        className: "fa fa-paper-plane",
         "aria-hidden": "true"
       }))))));
     }
