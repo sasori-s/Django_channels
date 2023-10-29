@@ -28994,16 +28994,19 @@ var WebSocketService = /*#__PURE__*/function () {
       var path = 'ws://127.0.0.1:8000/ws/chat/test/';
       this.socketRef = new WebSocket(path);
       this.socketRef.onopen = function () {
-        console.log('websocket open');
+        console.log('WebSocket open');
       };
+      this.socketNewMessage(JSON.stringify({
+        command: 'fetch_messages'
+      }));
       this.socketRef.onmessage = function (e) {
-        //sending message
+        _this.socketNewMessage(e.data);
       };
       this.socketRef.onerror = function (e) {
         console.log(e.message);
       };
       this.socketRef.onclose = function () {
-        console.log('websocket is closed');
+        console.log("WebSocket closed let's reopen");
         _this.connect();
       };
     }
@@ -29043,7 +29046,7 @@ var WebSocketService = /*#__PURE__*/function () {
     key: "addCallbacks",
     value: function addCallbacks(messagesCallback, newMessageCallback) {
       this.callbacks['messages'] = messagesCallback;
-      this.callbacks['mew_message'] = newMessageCallback;
+      this.callbacks['new_message'] = newMessageCallback;
     }
   }, {
     key: "sendMessage",
@@ -29058,24 +29061,6 @@ var WebSocketService = /*#__PURE__*/function () {
     key: "state",
     value: function state() {
       return this.socketRef.readyState;
-    }
-  }, {
-    key: "waitForSocketConnection",
-    value: function waitForSocketConnection(callback) {
-      var socket = this.socketRef;
-      var recursion = this.waitForSocketConnection;
-      setTimeout(function () {
-        if (socket.readyState === 1) {
-          console.log('connection is secure');
-          if (callback != null) {
-            callback();
-          }
-          return;
-        } else {
-          console.log('waiting for connection');
-          recursion(callback);
-        }
-      }, 1);
     }
   }], [{
     key: "getInstance",
@@ -29129,16 +29114,33 @@ var Chat = /*#__PURE__*/function (_React$Component) {
     var _this;
     _classCallCheck(this, Chat);
     _this = _super.call(this, props);
-    _defineProperty(_assertThisInitialized(_this), "renderMessages", function (message) {
-      var currentUser = 'admin';
-      return message.map(function (message) {
+    _defineProperty(_assertThisInitialized(_this), "messageChangeHandler", function (event) {
+      _this.setState({
+        message: event.target.value
+      });
+    });
+    _defineProperty(_assertThisInitialized(_this), "sendMessageHandler", function (e) {
+      e.preventDefault();
+      var messageObject = {
+        from: "admin",
+        content: _this.state.message
+      };
+      _websocket.default.newChatMessage(messageObject);
+      _this.setState({
+        message: ''
+      });
+    });
+    _defineProperty(_assertThisInitialized(_this), "renderMessages", function (messages) {
+      var currentUser = "admin";
+      return messages.map(function (message, i) {
         return /*#__PURE__*/_react.default.createElement("li", {
           key: message.id,
-          className: message.author === currentUser ? 'send' : 'replies'
+          className: message.author === currentUser ? 'sent' : 'replies'
         }, /*#__PURE__*/_react.default.createElement("img", {
-          src: "http://emilcarlsson.se/assets/mikeross.png",
-          alt: ""
-        }), /*#__PURE__*/_react.default.createElement("p", null, message.content));
+          src: "http://emilcarlsson.se/assets/mikeross.png"
+        }), /*#__PURE__*/_react.default.createElement("p", null, message.content, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("small", {
+          className: message.author === currentUser ? 'sent' : 'replies'
+        }, Math.round((new Date().getTime() - new Date(message.timestamp).getTime()) / 60000), " minutes ago")));
       });
     });
     _this.state = {};
@@ -29154,11 +29156,11 @@ var Chat = /*#__PURE__*/function (_React$Component) {
       var component = this;
       setTimeout(function () {
         if (_websocket.default.state() === 1) {
-          console.log('connection is secure');
+          console.log("Connection is made");
           callback();
           return;
         } else {
-          console.log('waiting for connection');
+          console.log("wait for connection...");
           component.waitForSocketConnection(callback);
         }
       }, 100);
@@ -29190,7 +29192,7 @@ var Chat = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/_react.default.createElement("img", {
         src: "http://emilcarlsson.se/assets/harveyspecter.png",
         alt: ""
-      }), /*#__PURE__*/_react.default.createElement("p", null, "username "), /*#__PURE__*/_react.default.createElement("div", {
+      }), /*#__PURE__*/_react.default.createElement("p", null, "username"), /*#__PURE__*/_react.default.createElement("div", {
         className: "social-media"
       }, /*#__PURE__*/_react.default.createElement("i", {
         className: "fa fa-facebook",
@@ -29207,9 +29209,14 @@ var Chat = /*#__PURE__*/function (_React$Component) {
         id: "chat-log"
       }, messages && this.renderMessages(messages))), /*#__PURE__*/_react.default.createElement("div", {
         className: "message-input"
+      }, /*#__PURE__*/_react.default.createElement("form", {
+        onSubmit: this.sendMessageHandler
       }, /*#__PURE__*/_react.default.createElement("div", {
         className: "wrap"
       }, /*#__PURE__*/_react.default.createElement("input", {
+        onChange: this.messageChangeHandler,
+        value: this.state.message,
+        required: true,
         id: "chat-message-input",
         type: "text",
         placeholder: "Write your message..."
@@ -29222,7 +29229,7 @@ var Chat = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/_react.default.createElement("i", {
         className: "fa fa-paper-plane",
         "aria-hidden": "true"
-      }))))));
+      })))))));
     }
   }]);
   return Chat;
