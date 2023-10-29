@@ -1,5 +1,6 @@
 import React from 'react'
 import SidePanel from './Sidepanel/Sidepanel'
+import WebSocketInstance from '../websocket'
 
 class Chat extends React.Component {
     render() {
