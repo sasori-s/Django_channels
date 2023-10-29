@@ -11,7 +11,7 @@ class WebSocketService {
         this.socketRef = null;
     }
     connect() {
-        const path = 'ws://127.0.0.1:8000/ws/chat/test'
+        const path = 'ws://127.0.0.1:8000/ws/chat/test/'
         this.socketRef = new WebSocket(path)
         this.socketRef.onopen = () => {
             console.log('websocket open');
@@ -62,6 +62,10 @@ class WebSocketService {
             console.log(err.message)
         }
     }
+
+    state() {
+        return this.socketRef.readyState
+    }    
 
     waitForSocketConnection(callback) {
         const socket = this.socketRef;

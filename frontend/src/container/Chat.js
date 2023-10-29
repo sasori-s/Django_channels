@@ -3,7 +3,63 @@ import SidePanel from './Sidepanel/Sidepanel'
 import WebSocketInstance from '../websocket'
 
 class Chat extends React.Component {
+
+    constructor(props){
+      super(props)
+      this.state = {}
+
+      this.waitForSocketConnection(() => {
+            WebSocketInstance.addCallbacks(
+              this.setMessages.bind(this),
+              this.addMessage.bind(this));
+			WebSocketInstance.fetchMessages(this.props.currentUser)
+      })
+    }
+
+    waitForSocketConnection(callback) {
+      const component = this
+      
+      setTimeout(
+          function(){
+              if (WebSocketInstance.state() === 1){
+                  console.log('connection is secure')
+                  callback()
+                  return
+              }else{
+                  console.log('waiting for connection')
+                  component.waitForSocketConnection(callback)
+              }
+          },100)
+  	}
+
+	addMessage(message) {
+		this.setState({
+			messages: [...this.state.messages, message]
+		})
+	}
+
+	setMessages(messages) {
+		this.setState({
+			messages : messages.reverse()
+		})
+	}
+
+	renderMessages = (message) => {
+		const currentUser = 'admin';
+		return message.map(message => (
+			<li 
+			key={message.id}
+			className={message.author === currentUser ? 'send' : 'replies'}>
+			<img src="http://emilcarlsson.se/assets/mikeross.png" alt="" />
+			<p>
+				{message.content}
+			</p>
+			</li>
+		))
+	}
+  
     render() {
+		const messages = this.state.messages
         return(
             <div id="frame">
             <SidePanel/>
@@ -19,7 +75,10 @@ class Chat extends React.Component {
               </div>
               <div className="messages">
                 <ul id="chat-log">
-                   
+                   {
+					messages && 
+					this.renderMessages(messages)
+				   }
                 </ul>
               </div>
               <div className="message-input">
